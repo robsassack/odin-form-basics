@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Basics</title>
+</head>
+<body>
+    <!-- <form action="http://httpbin.org/post" method="post"> -->
+        <div>
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" id="first_name">
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" id="last_name">
+        </div>
+        <div>
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age">
+        </div>
+        <div>
+            <label for="user_email">Email Address:</label>
+            <input type="email" id="user_email" name="email" placeholder="you@google.com">
+        </div>
+        <div>
+            <label for="user_password">Password:</label>
+            <input type="password" name="password" id="user_password">
+        </div>
+        <div>
+            <label for="amount">Amount:</label>
+            <input type="number" name="amount" id="amount">
+        </div>
+        <div>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" name="dob" id="dob">
+        </div>
+        <div>
+            <textarea rows="20" cols="60" placeholder="Put text here!"></textarea>
+        </div>
+        <div>
+            <select name="cars" id="cars">
+                <option value="mercedes">Mercedes</option>
+                <option value="tesla">Tesla</option>
+                <option value="volvo">Volvo</option>
+                <option value="bmw" selected>BMW</option>
+                <option value="mini">Mini</option>
+                <option value="ford">Ford</option>
+            </select>
+        </div>
+        <div>
+            <select name="fashion" id="fashion">
+                <optgroup label="Clothing">
+                    <option value="t_shirt">T-Shirts</option>
+                    <option value="sweater">Sweaters</option>
+                    <option value="coats">Coats</option>
+                </optgroup>
+                <optgroup label="Foot Wear">
+                    <option value="sneakers">Sneakers</option>
+                    <option value="boots">Boots</option>
+                    <option value="sandals">Sandals</option>
+                </optgroup>
+            </select>
+        </div>
+        <div>
+            <h1>Ticket Type</h1>
+            <div>
+                <input type="radio" name="ticket_type" id="child" value="child">
+                <label for="child">Child</label>
+            </div>
+            <div>
+                <input type="radio" name="ticket_type" id="adult" value="adult" checked>
+                <label for="adult">Adult</label>
+            </div>
+            <div>
+                <input type="radio" name="ticket_type" id="senior" value="senior">
+                <label for="senior">Senior</label>
+            </div>
+        </div>
+        <div>
+            <h1>Pizza Toppings</h1>
+            <div>
+                <input type="checkbox" name="topping" id="sausage" value="sausage">
+                <label for="sausage">Sausage</label>
+            </div>
+            <div>
+                <input type="checkbox" name="topping" id="onions" value="onions">
+                <label for="onions">Onions</label>
+            </div>
+            <div>
+                <input type="checkbox" name="topping" id="pepperoni" value="pepperoni" checked>
+                <label for="pepperoni">Pepperoni</label>
+            </div>
+            <div>
+                <input type="checkbox" name="topping" id="mushrooms" value="mushrooms">
+                <label for="mushrooms">Mushrooms</label>
+            </div>
+        </div>
+        <button type="reset">Reset</button>
+        <button class="submit" type="submit">Submit</button>
+    <!-- </form> -->
+    <p class="greeting"></p>
+
+    <fieldset>
+        <legend>Contact Details</legend>
+
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+
+        <label for="phone_number">Phone Number:</label>
+        <input type="tel" name="phone_number" id="phone_number">
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email">
+    </fieldset>
+
+    <fieldset>
+        <legend>Delivery Details</legend>
+
+        <label for="street_address">Street Address:</label>
+        <input type="text" name="street_address" id="street_address">
+
+        <label for="city">City:</label>
+        <input type="text" name="city" id="city">
+
+        <label for="zip_code">Zip Code:</label>
+        <input type="text" name="zip_code" id="zip_code">
+    </fieldset>
+
+    <fieldset>
+        <legend>What would you like to drink?</legend>
+
+        <div>
+            <input type="radio" name="drink" id="coffee" value="coffee">
+            <label for="coffee">Coffee</label>
+        </div>
+
+        <div>
+            <input type="radio" name="drink" id="tea" value="tea">
+            <label for="tea">Tea</label>
+        </div>
+
+        <div>
+            <input type="radio" name="drink" id="soda" value="soda">
+            <label for="soda">Soda</label>
+        </div>
+    </fieldset>
+</body>
+<script>
+    const firstName = document.querySelector('#first_name');
+    const lastName = document.querySelector('#last_name');
+    const age = document.querySelector('#age');
+    const submitButton = document.querySelector('.submit');
+    const greeting = document.querySelector('.greeting');
+
+    submitButton.addEventListener('click', (e) => {
+        greeting.innerText = `Hello ${firstName.value} ${lastName.value}, age ${age.value}.`;
+    })
+</script>
+</html>
