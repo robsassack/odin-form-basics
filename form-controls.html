@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic native form controls</title>
+</head>
+<body>
+    <div>
+        <label for="comment">Text</label>
+        <input type="text" name="comment" id="comment" value="Basic text field">
+    </div>
+    <div>
+        <label for="pwd">Password</label>
+        <input type="password" name="pwd" id="pwd">
+    </div>
+    <div>
+        <input type="hidden" name="timestamp" id="timestamp" value="1286705410">
+    </div>
+    <fieldset>
+        <legend>Chose all of the vegetables you like to eat</legend>
+        <ul>
+            <li>
+                <label for="carrots">Carrots</label>
+                <input type="checkbox" name="vegetable" id="carrots" value="carrots" checked>
+            </li>
+            <li>
+                <label for="peas">Peas</label>
+                <input type="checkbox" name="vegetable" id="peas" value="peas">
+            </li>
+            <li>
+                <label for="cabbage">Cabbage</label>
+                <input type="checkbox" name="vegetable" id="cabbage" value="cabbage">
+            </li>
+        </ul>
+    </fieldset>
+    <fieldset>
+        <legend>What is your favorite meal?</legend>
+        <ul>
+            <li>
+                <label for="soup">Soup</label>
+                <input type="radio" name="meal" id="soup" value="soup" checked>
+            </li>
+            <li>
+                <label for="curry">Curry</label>
+                <input type="radio" name="meal" id="curry" value="curry">
+            </li>
+            <li>
+                <label for="pizza">Pizza</label>
+                <input type="radio" name="meal" id="pizza" value="pizza">
+            </li>
+        </ul>
+    </fieldset>
+
+    <div>
+        <button type="submit">
+            This is a <strong>submit button</strong>
+        </button>
+        <input type="submit" value="This is a submit button">
+    </div>
+
+    <div>
+        <button type="reset">This is a <strong>reset</strong> button</button>
+        <input type="button" value="This is a reset button">
+    </div>
+
+    <div>
+        <button type="button">
+            This is an <strong>anonymous button</strong>
+        </button>
+        <input type="button" value="This is an anonymous button">
+    </div>
+
+    <div>
+        <button disabled="disabled">This is a <strong>disabled</strong> button</button>
+        <input type="button" value="This is a disabled button" disabled>
+    </div>
+
+    <div>
+        <input type="image" src="https://picsum.photos/80/30" alt="Click me!" width="80" height="30">
+    </div>
+
+    <div>
+        <input type="file" name="file" id="file" accept="image/*" mulitple>
+    </div>
+
+    <div>
+        <input type="file" name="camera" id="camera" accept="image/*;capture=camera">
+        <input type="file" name="camera" id="camera" accept="video/*;capture=camcorder">
+        <input type="file" name="camera" id="camera" accept="audio/*;capture=microphone">
+    </div>
+</body>
+</html>
