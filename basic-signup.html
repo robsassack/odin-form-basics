@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
+
+        form {
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        div {
+            position: relative;
+            background: white;
+            border-bottom: 1px solid #ccc;
+        }
+
+        label {
+            opacity: 0.3;
+            font-weight: bold;
+            position: absolute;
+            top: 22px;
+            left: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            border: 0;
+            padding: 20px 20px 20px 50px;
+            background: #eee;
+        }
+
+        input + label {
+            opacity: 0;
+        }
+
+        input:valid {
+            background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg);
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: 20px 20px;
+        }
+
+        input:valid + label {
+            opacity: 0;
+        }
+
+        input:invalid:not(:focus):not(:placeholder-shown) {
+            background: pink;
+        }
+
+        input:invalid:not(:focus):not(:placeholder-shown) + label {
+            opacity: 0;
+        }
+
+        input:invalid:not(:focus):not(:placeholder-shown) ~ .requirements {
+            max-height: 200px;
+            padding: 0 30px 20px 50px;
+        }
+
+        .requirements {
+            padding: 0 30px 0 50px;
+            color: #999;
+            max-height: 0;
+            transition: 0.28s;
+            overflow: hidden;
+            color: red;
+            font-style: italic;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            margin: 20px 0;
+            background: #41d873;
+            color: white;
+            border: 0;
+            padding: 20px;
+            font-size: 1.2rem;
+        }
+
+        body {
+            background: #333;
+            font-family: 'PT Sans', sans-serif;
+            padding: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <form action="#0">
+        <div>
+            <input type="text" name="first_name" id="first_name" placeholder=" " required>
+            <label for="first_name">First Name</label>
+        </div>
+
+        <div>
+            <input type="text" name="last_name" id="last_name" placeholder=" " required>
+            <label for="last_name">Last Name</label>
+        </div>
+
+        <div>
+            <input type="email" name="email" id="email" placeholder=" " required>
+            <label for="email">Email</label>
+            <div class="requirements">Must be a valid email address.</div>
+        </div>
+
+        <div>
+            <input type="password" name="password" id="password" placeholder=" " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
+            <label for="password">Password</label>
+            <div class="requirements">Must be at least 6 characters long and contain at least one number, one lowercase and one uppercase letter.</div>
+        </div>
+
+        <input type="submit" value="Sign Up">
+    </form>
+</body>
+</html>

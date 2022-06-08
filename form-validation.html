@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        input {
+            border: 2px solid #000;
+            margin-bottom: 15px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        input:invalid {
+            border-color: red;
+        }
+
+        input:valid {
+            border-color: green;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="get">
+        <div>
+            <label for="user_email">*Email:</label>
+            <input type="email" name="user_email" id="user_email" required>
+        </div>
+        <div>
+            <label for="user_password">*Password:</label>
+            <input type="password" name="user_password" id="user_password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+
+    <hr>
+
+    <p>Minimum 3 character length</p>
+    <form action="#" method="get">
+        <div>
+            <textarea placeholder="What's happening?" minlength="3"></textarea>
+        </div>
+        <button type="submit">Tweet</button>
+    </form>
+
+    <hr>
+
+    <p>Maximum 20 character length</p>
+    <form action="#" method="get">
+        <div>
+            <textarea placeholder="What's happening?" maxlength="20"></textarea>
+        </div>
+        <button type="submit">Tweet</button>
+    </form>
+
+    <hr>
+
+    <p>Minimum 5, maximum 20 characer length</p>
+    <form action="#" method="get">
+        <div>
+            <textarea placeholder="What's happening?" maxlength="20" minlength="5"></textarea>
+        </div>
+        <button type="submit">Tweet</button>
+    </form>
+
+    <hr>
+
+    <p>Minimum of 1</p>
+    <form action="#" method="get">
+        <div>
+            <label for="quantity">Quantity</label>
+        </div>
+        <input type="number" name="quantity" id="quantity" min="1" value="0">
+        <div>
+            <button type="submit">Place Order</button>
+        </div>
+    </form>
+
+    <hr>
+
+    <p>Maximum of 5</p>
+    <form action="#" method="get">
+        <div>
+            <label for="passengers">Passengers</label>
+        </div>
+        <input type="number" name="passengers" id="passengers" max="5" value="0">
+        <div>
+            <button type="submit">Book</button>
+        </div>
+    </form>
+
+    <hr>
+
+    <p>Regex validation</p>
+    <form action="#" method="get">
+        <div>
+            <label for="zip_code">Postal / Zip Code:</label>
+        </div>
+        <input type="text" name="zip_code" id="zip_code" pattern="(\d{5}([\-]\d{4})?)" title="Please enter a valid zip code, example: 65251" placeholder="65251" required>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <hr>
+
+    <p>Validation styling</p>
+    <form action="#" method="get">
+        <div>
+            <label for="email">*Email</label>
+        </div>
+        <input type="email" name="email" id="email">
+
+        <div>
+            <label for="website">*Website</label>
+        </div>
+        <input type="url" name="website" id="website">
+
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
